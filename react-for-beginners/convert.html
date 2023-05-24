@@ -16,7 +16,7 @@
   <script type="text/babel">
     const root = document.querySelector("#root");
 
-    function MinutesTokm() {
+    function MinutesToHours() {
       const [amount, setAmount] = React.useState(0);
       const [inverted, setInverted] = React.useState(false);
 
@@ -26,7 +26,7 @@
       };
       //리셋 함수
       const reset = () => setAmount(0);
-      //입력값 반전 함수
+      //input 반전 함수
       const onInvert = () => {
         reset();
         setInverted((current) => !current);
@@ -34,13 +34,13 @@
 
       return (
         <div>
-          <h2>Minites To km</h2>
+          <h2>Minutes To Hours</h2>
           <div>
             <label htmlfor="amount">Minites : </label>
             <input
               value={inverted ? amount * 60 : amount}
               id="amount"
-              placeholder="amount"
+              placeholder="minites"
               type="number"
               onChange={onChange}
               disabled={inverted}
@@ -48,11 +48,11 @@
           </div>
 
           <div>
-            <label htmlfor="km">km : </label>
+            <label htmlfor="hours">Hours : </label>
             <input
               value={inverted ? amount : Math.round(amount / 60)}
-              id="km"
-              placeholder="km"
+              id="hours"
+              placeholder="hours"
               type="number"
               onChange={onChange}
               disabled={!inverted}
@@ -66,17 +66,14 @@
       );
     }
 
-    function KmToM() {
+    function MToKm() {
       const [amount, setAmount] = React.useState(0);
       const [inverted, setInverted] = React.useState(false);
 
-      // 입력값 함수
       const onChange = (event) => {
         setAmount(event.target.value);
       };
-      //리셋 함수
       const reset = () => setAmount(0);
-      //입력값 반전 함수
       const onInvert = () => {
         reset();
         setInverted((current) => !current);
@@ -84,13 +81,13 @@
 
       return (
         <div>
-          <h2>Km To M</h2>
+          <h2>Miter To Km</h2>
           <div>
-            <label htmlfor="amount">M : </label>
+            <label htmlfor="amount">Miters : </label>
             <input
               value={inverted ? amount * 1000 : amount}
               id="amount"
-              placeholder="amount"
+              placeholder="Miter"
               type="number"
               onChange={onChange}
               disabled={inverted}
@@ -98,11 +95,11 @@
           </div>
 
           <div>
-            <label htmlfor="km">Km : </label>
+            <label for="km">Km : </label>
             <input
               value={inverted ? amount : Math.round(amount / 1000)}
               id="km"
-              placeholder="km"
+              placeholder="Km"
               type="number"
               onChange={onChange}
               disabled={!inverted}
@@ -110,7 +107,7 @@
           </div>
           <button onClick={reset}>Reset</button>
           <button onClick={onInvert}>
-            {inverted ? "Turn back" : "Invert"}
+            {inverted ? "Turn back" : "invert"}
           </button>
         </div>
       );
@@ -131,8 +128,8 @@
             <option value="1">Km & M</option>
           </select>
           <hr />
-          {index === "0" ? <MinutesTokm /> : null}
-          {index === "1" ? <KmToM /> : null}
+          {index === "0" ? <MinutesToHours /> : null}
+          {index === "1" ? <MToKm /> : null}
         </div>
       );
     }
