@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+  <script src="https://unpkg.com/react@17.0.2/umd/react.production.min.js"></script>
+  <script src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.production.min.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+  <script type="text/babel">
+    // 2. ()자리에 prop을 넣어야 retrun에서 작업 가능
+    function Btn({ text, changeValue }) {
+      // = function Btn(props) {
+      console.log(text, "was rendered");
+      return (
+        <button
+          //이벤트리스너 : onClick
+          onClick={changeValue}
+          style={{
+            backgroundColor: "tomato",
+            color: "white",
+            padding: "10px 20px",
+            border: 0,
+            borderRadius: 10,
+          }}
+        >
+          {/*App의 Btn의 value설정*/}
+          {text}
+        </button>
+      );
+    }
+
+    //변경 사항이없다면 재 렌더링하지 않음
+    const MemoBtn = React.memo(Btn);
+
+    function App() {
+      const [value, setValue] = React.useState("Save Changes");
+
+      //버튼 이름변경 함수
+      const changeValue = () => {
+        setValue("Revert Changes");
+      };
+
+      return (
+        <div>
+          {/* onClick은 Btn으로 들어가는 prop != 이벤트리스너 = 현재 changeValue
+           * 컴포넌트 내부에 넣은 것은 전부 prop
+           * 1. componetn 내부에 prop 설정 -> 자동으로 return해주지 않음*/}
+          <MemoBtn text={value} changeValue={changeValue} />
+          <MemoBtn text="Continue" />
+        </div>
+      );
+    }
+
+    const root = document.querySelector("#root");
+    ReactDOM.render(<App />, root);
+  </script>
+</html>
