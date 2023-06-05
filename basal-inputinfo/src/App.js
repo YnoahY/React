@@ -4,6 +4,8 @@ import Home from "./pages/Home";
 import About from "./pages/About";
 import Counter from "./pages/Counter";
 import Input from "./pages/Input";
+import Input2 from "./pages/Input2";
+import List from "./pages/List";
 
 //메뉴 클릭 시 Link to의 경로와 일치하는 Route path의 Route에서 element 속성에 할당 된 컴포넌트를 실행, 해당 컴포넌트로 화면 전환
 function App() {
@@ -11,21 +13,18 @@ function App() {
   return (
     <div className="App">
       <nav>
-        <Link to="/">Home</Link> | <Link to="/about">About</Link> |
-        <Link to="/counter">Counter</Link> | <Link to="/input">Input</Link>
+        <Link to="/">Home</Link> | <Link to="/about">About</Link> |{" "}
+        <Link to="/counter">Counter</Link> | <Link to="/input">Input</Link> |{" "}
+        <Link to="/input2">Input2</Link> | <Link to="/list">List</Link>
       </nav>
 
       <Routes>
         <Route path="/" element={<Home />}></Route>
-      </Routes>
-      <Routes>
         <Route path="/about" element={<About />}></Route>
-      </Routes>
-      <Routes>
         <Route path="/counter" element={<Counter />}></Route>
-      </Routes>
-      <Routes>
         <Route path="/input" element={<Input />}></Route>
+        <Route path="/input2" element={<Input2 />}></Route>
+        <Route path="/list" element={<List />}></Route>
       </Routes>
     </div>
   );

@@ -22,7 +22,7 @@ const Input = () => {
 
 export default Input;
 
-/**onChange={onChange} == onChange함수 = {함수명}
+/**onChange={onChange} == onChange함수={함수명}
  * input의 value에  useState로 생성한 변수 {}로 맵핑 할 것
  *
  */
