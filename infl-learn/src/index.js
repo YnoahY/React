@@ -8,15 +8,25 @@ import Clock from "./section_04/Clock";
 import CommentList from "./section_05/CommentList";
 import NotificationList from "./section_06/NotificationList";
 import Accommodate from "./section_07/Accommodate";
+import ConfirmButtons from "./section_08/ConfirmButtons";
+import LandingPage from "./section_09/LandingPage";
+import AttendanceBook from "./section_10/AttemdanceBook";
+import SingUp from "./section_11/SignUp";
+import Calulator from "./section_12/Calculator";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    {/* <Library />
+    {/* <Library />n
     <Clock />
     <CommentList />
-    <NotificationList /> */}
+    <NotificationList />
     <Accommodate />
+    <ConfirmButtons />
+    <LandingPage />
+    <AttendanceBook />
+    <SingUp />*/}
+    <Calulator />
   </React.StrictMode>
 );
 
