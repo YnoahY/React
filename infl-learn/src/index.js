@@ -12,7 +12,9 @@ import ConfirmButtons from "./section_08/ConfirmButtons";
 import LandingPage from "./section_09/LandingPage";
 import AttendanceBook from "./section_10/AttemdanceBook";
 import SingUp from "./section_11/SignUp";
-import Calulator from "./section_12/Calculator";
+import Calculator from "./section_12/Calculator";
+import ProfileCard from "./section_13/ProfileCard";
+import DarkOrLight from "./section_14/DarkOrLight";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -25,8 +27,10 @@ root.render(
     <ConfirmButtons />
     <LandingPage />
     <AttendanceBook />
-    <SingUp />*/}
-    <Calulator />
+    <SingUp />
+    <Calculator />
+    <ProfileCard />*/}
+    <DarkOrLight />
   </React.StrictMode>
 );
 

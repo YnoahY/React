@@ -3,17 +3,17 @@ const scaleNames = {
   f: "화씨",
 };
 
-function TemperatureInput(props) {
-  const habdleChange = (event) => {
-    props.onTemperatureChange(event.tartget.value);
+const TemperatureInput = (props) => {
+  const handleChange = (event) => {
+    props.onTemperatureChange(event.target.value);
   };
 
   return (
     <fieldset>
       <legend>온도 입력(단위 : {scaleNames[props.scale]});</legend>
-      <input value={props.temperature} onchange={habdleChange} />
+      <input value={props.temperature} onChange={handleChange} />
     </fieldset>
   );
-}
+};
 
 export default TemperatureInput;
